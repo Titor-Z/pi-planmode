@@ -39,7 +39,7 @@
 ```bash
 pi install npm:pi-planning
 # 或从 GitHub
-pi install git:github.com/Titor-Z/pi-planning
+pi install git:github.com/Titor-Z/pi-planmode
 ```
 
 ## 🧠 工作原理
@@ -61,6 +61,9 @@ src/prompt.ts             注入给模型的提示词常量
 ```
 
 ## ⚠️ 说明
+
+- npm 包名为 `pi-planning`；本 GitHub 仓库名为 `pi-planmode`（仓库名不受
+  npm 规则约束）
 
 - npm 上的 `pi-plan-mode`（qmx 维护）为无关项目；npm 名称混淆保护也不允许
   发布 `pi-planmode`（与 pi-plan-mode 过似），故定名 `pi-planning`
