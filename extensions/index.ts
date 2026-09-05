@@ -17,7 +17,7 @@ import type { AssistantMessage, TextContent } from "@earendil-works/pi-ai";
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
 import { Key } from "@earendil-works/pi-tui";
 import { extractTodoItems, isSafeCommand, markCompletedSteps, type TodoItem } from "../src/utils.ts";
-import { setPlanMode } from "../src/state.ts";
+import { setPlanMode, PLAN_BADGE } from "../src/state.ts";
 import { PLAN_MODE_PROMPT, executionPrompt, executionReminder } from "../src/prompt.ts";
 
 // Tools
@@ -64,7 +64,7 @@ export default function planModeExtension(pi: ExtensionAPI): void {
 			const completed = todoItems.filter((t) => t.completed).length;
 			ctx.ui.setStatus("plan-mode", ctx.ui.theme.fg("accent", `📋 ${completed}/${todoItems.length}`));
 		} else if (planModeEnabled) {
-			ctx.ui.setStatus("plan-mode", ctx.ui.theme.fg("warning", "⏸ plan"));
+			ctx.ui.setStatus("plan-mode", PLAN_BADGE);
 		} else {
 			ctx.ui.setStatus("plan-mode", undefined);
 		}
