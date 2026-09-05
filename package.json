@@ -1,0 +1,31 @@
+{
+	"name": "pi-planmode",
+	"version": "1.0.0",
+	"description": "为 Pi Agent 打造的计划模式 — 只读探索、计划提取与执行进度追踪 | Plan mode for Pi Agent — read-only exploration, plan extraction & execution progress tracking",
+	"keywords": [
+		"pi-package",
+		"pi-extension",
+		"plan-mode",
+		"planning",
+		"agent",
+		"read-only"
+	],
+	"license": "MIT",
+	"author": "Titor-Z",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Titor-Z/pi-planmode.git"
+	},
+	"pi": {
+		"extensions": [
+			"./extensions/index.ts",
+			"./extensions/mode-editor.ts"
+		]
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-agent-core": "*",
+		"@earendil-works/pi-ai": "*",
+		"@earendil-works/pi-coding-agent": "*",
+		"@earendil-works/pi-tui": "*"
+	}
+}
