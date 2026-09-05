@@ -37,7 +37,7 @@
 ## 📦 安装
 
 ```bash
-pi install npm:pi-planning
+pi install npm:@foolsecret/pi-planmode
 # 或从 GitHub
 pi install git:github.com/Titor-Z/pi-planmode
 ```
@@ -62,7 +62,7 @@ src/prompt.ts             注入给模型的提示词常量
 
 ## ⚠️ 说明
 
-- npm 包名为 `pi-planning`；本 GitHub 仓库名为 `pi-planmode`（仓库名不受
+- npm 包名为 `@foolsecret/pi-planmode`（scope 保住了 planmode 原名）；本 GitHub 仓库名为 `pi-planmode`（仓库名不受
   npm 规则约束）
 
 - npm 上的 `pi-plan-mode`（qmx 维护）为无关项目；npm 名称混淆保护也不允许
@@ -71,7 +71,7 @@ src/prompt.ts             注入给模型的提示词常量
 
 ## English
 
-**pi-planning** adds plan mode to Pi Agent: a toggle that switches the agent into read-only exploration (write tools disabled, bash restricted to a safe allowlist), extracts numbered plan steps from the AI's "Plan:" section, then executes with full tool access while tracking progress via `[DONE:n]` markers. Includes an input-box border tint and progress widget. Install with `pi install npm:pi-planning`, toggle with `/plan` or Ctrl+Alt+P.
+**@foolsecret/pi-planmode** adds plan mode to Pi Agent: a toggle that switches the agent into read-only exploration (write tools disabled, bash restricted to a safe allowlist), extracts numbered plan steps from the AI's "Plan:" section, then executes with full tool access while tracking progress via `[DONE:n]` markers. Includes an input-box border tint and progress widget. Install with `pi install npm:@foolsecret/pi-planmode`, toggle with `/plan` or Ctrl+Alt+P.
 
 ## License
 
