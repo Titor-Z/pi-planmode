@@ -1,6 +1,6 @@
 {
 	"name": "pi-planning",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "为 Pi Agent 打造的计划模式 — 只读探索、计划提取与执行进度追踪 | Plan mode for Pi Agent — read-only exploration, plan extraction & execution progress tracking",
 	"keywords": [
 		"pi-package",
