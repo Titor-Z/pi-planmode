@@ -1,8 +1,6 @@
 # 发布到 npm：推送 v* tag 时自动执行
-# 前置（一次性）：npmjs.com → pi-planning → Settings → Publishing access
-#   → 关联 GitHub 仓库 Titor-Z/pi-planmode（Trusted Publishing，无需存 token）
-#   或改用传统方式：仓库 Settings → Secrets 添加 NPM_TOKEN，
-#   并把 publish 步骤的 env 换成 NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+# 认证：GitHub Secret NPM_TOKEN（granular token，勾选 bypass 2FA）
+#   更换 token：gh secret set NPM_TOKEN（本地 gh CLI 已登录）
 name: Publish to npm
 
 on:
@@ -13,7 +11,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write # npm Trusted Publishing (OIDC) 所需
       contents: read
     steps:
       - uses: actions/checkout@v4
@@ -24,3 +21,5 @@ jobs:
       - name: Check version matches tag
         run: node -e "const v=require('./package.json').version; const t=process.env.GITHUB_REF_NAME.slice(1); if(v!==t){console.error(`package.json ${v} != tag v${t}`);process.exit(1)}"
       - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
